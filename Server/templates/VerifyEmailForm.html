@@ -12,12 +12,14 @@
   </head>
   <body>
     <div class="container">
-    <h1>Signup for Open Gradebook</h1>
-    <form action="/verify" method="POST">
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="number" name="number" required>
-      <label for="major">Choose your major:</label>
-      <select id="major" name="major">
+    <h1>Signup for Open Gradebook</h1> 
+    <h2>Lets Verify Your Email</h2>
+    <h3><i>Rose-Hulman <b>Students</b> only . . .</i>></h3>
+    <form action="/get_VerifyEmailForm" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <!-- <label for="major">Choose your major:</label> -->
+      <!-- <select id="major" name="major">
           <option value="biochemistry">Biochemistry</option>
           <option value="biochem_mol_bio">Biochemistry and Molecular Biology</option>
           <option value="biology">Biology</option>
@@ -38,8 +40,8 @@
           <option value="optical_engineering">Optical Engineering</option>
           <option value="physics">Physics</option>
           <option value="software_engineering">Software Engineering</option>
-      </select>
-      <input type="submit" value="Verify">
+      </select> -->
+      <input type="submit" value="Verify Email">
     </form>
     </div>
   </body>

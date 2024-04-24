@@ -24,6 +24,12 @@ router.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'templates/index.html'));
   });
   
+  router.get('/search', function(req, res) { // really should be router.post, TODO fix that
+    req.session.number = req.number;
+    req.session.major = req.major;
+    res.render('search', { });
+  });
+
   router.post('/signup', function (req,res){
     console.log("signup page")
     res.sendFile(path.join(__dirname, 'templates/signup.html'));
@@ -102,7 +108,7 @@ router.get('/', function(req, res) {
     const courseExists = search in jsonData;
     if (courseExists){
       res.render('classpage',{className:search,number:number});
-  }
+    }
     else{
       res.render('classnotfound');
     }
@@ -124,7 +130,7 @@ router.get('/', function(req, res) {
   
   router.use('/Biology', function (req, res, next) {
     const BIOClasses = Object.keys(jsonData).filter(key => jsonData[key] === "BIO");
-    res.render('major', { major: "Biology", gpa: gpaList[2],classes:BIOClasses });;
+    res.render('major', { major: "Biology", gpa: gpaList[2],classes:BIOClasses });
   });
   
   router.use('/Biomathematics', function (req, res, next) {
